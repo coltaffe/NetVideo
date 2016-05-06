@@ -77,9 +77,10 @@ std::string Customer::statement() const {
         result += it->getVideo().getTitle();
         result += "\t";
 
-        
+        amountFor(*it);
 
         // amount of rental
+        double thisAmount = amountFor(*it);
         std::ostringstream out_str_stream;
         out_str_stream << thisAmount;
         result += out_str_stream.str();
